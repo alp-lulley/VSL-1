@@ -281,6 +281,13 @@ window.TriplePixelData={TripleName:"vycjyy-20.myshopify.com",ver:"2.17",plat:"SH
   <script>
 document.addEventListener('DOMContentLoaded', function() {
     const ctaButton = document.querySelector('.vsl-cta-button');
+  
+// Track when the CTA button is clicked (Sales Page Click)
+ctaButton.addEventListener('click', function() {
+    fbq('track', 'Sales Page Click');
+    console.log("DEBUG: FB Event 'Sales Page Click' fired on CTA button click.");
+});
+
     if (!ctaButton) {
         console.error("DEBUG: CTA button with class '.vsl-cta-button' was NOT found. This should not happen now.");
         return;
